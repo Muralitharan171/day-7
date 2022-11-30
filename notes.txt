@@ -1,0 +1,606 @@
+//Get all the countries from the Asia continent /region using the Filter function
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all",true)
+request.send()
+ request.onload = function(){
+    var data = request.response
+    var result = JSON.parse(data)
+     var res= result.filter((ele)=>( ele.region==="Asia"))  
+  var res1= res.map((ele)=>((ele).name.common))
+     console.log(res1)
+ }
+output:
+
+
+Array(50) [ "Maldives", "Pakistan", "Malaysia", "Uzbekistan", "Singapore", "Qatar", "Kazakhstan", "Bahrain", "India", "Macau", … ]
+​
+0: "Maldives"
+​
+1: "Pakistan"
+​
+2: "Malaysia"
+​
+3: "Uzbekistan"
+​
+4: "Singapore"
+​
+5: "Qatar"
+​
+6: "Kazakhstan"
+​
+7: "Bahrain"
+​
+8: "India"
+​
+9: "Macau"
+​
+10: "Syria"
+​
+11: "Kyrgyzstan"
+​
+12: "Palestine"
+​
+13: "Timor-Leste"
+​
+14: "Taiwan"
+​
+15: "South Korea"
+​
+16: "Iraq"
+​
+17: "Cambodia"
+​
+18: "Sri Lanka"
+​
+19: "Israel"
+​
+20: "Tajikistan"
+​
+21: "Azerbaijan"
+​
+22: "Georgia"
+​
+23: "China"
+​
+24: "Thailand"
+​
+25: "Indonesia"
+​
+26: "Turkmenistan"
+​
+27: "Turkey"
+​
+28: "Iran"
+​
+29: "Lebanon"
+​
+30: "Philippines"
+​
+31: "Kuwait"
+​
+32: "Oman"
+​
+33: "Afghanistan"
+​
+34: "Armenia"
+​
+35: "Bangladesh"
+​
+36: "Laos"
+​
+37: "Nepal"
+​
+38: "Myanmar"
+​
+39: "United Arab Emirates"
+​
+40: "Bhutan"
+​
+41: "Jordan"
+​
+42: "Vietnam"
+​
+43: "Brunei"
+​
+44: "Japan"
+​
+45: "Hong Kong"
+​
+46: "Saudi Arabia"
+​
+47: "North Korea"
+​
+48: "Mongolia"
+​
+49: "Yemen"
+​
+length: 50
+
+
+ //Get all the countries with a population of less than 2 lakhs using Filter function
+
+var request =new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all",true)
+request.send();
+request.onload = function(){
+    var data =request.response;
+var result = JSON.parse(data);
+    var res= result.filter((ele)=>( ele.population<200000))
+    var res1= res.map((ele)=>((ele).name.common))
+    console.log(res1);
+}
+output:
+
+Array(62) [ "Aruba", "Wallis and Futuna", "Åland Islands", "Pitcairn Islands", "Seychelles", "French Southern and Antarctic Lands", "Christmas Island", "Saint Martin", "Heard Island and McDonald Islands", "Antarctica", … ]
+​
+0: "Aruba"
+​
+1: "Wallis and Futuna"
+​
+2: "Åland Islands"
+​
+3: "Pitcairn Islands"
+​
+4: "Seychelles"
+​
+5: "French Southern and Antarctic Lands"
+​
+6: "Christmas Island"
+​
+7: "Saint Martin"
+​
+8: "Heard Island and McDonald Islands"
+​
+9: "Antarctica"
+​
+10: "Greenland"
+​
+11: "British Indian Ocean Territory"
+​
+12: "Saint Lucia"
+​
+13: "Niue"
+​
+14: "Saint Barthélemy"
+​
+15: "Grenada"
+​
+16: "Isle of Man"
+​
+17: "Curaçao"
+​
+18: "Dominica"
+​
+19: "Faroe Islands"
+​
+20: "Montserrat"
+​
+21: "Cook Islands"
+​
+22: "Bermuda"
+​
+23: "San Marino"
+​
+24: "Cayman Islands"
+​
+25: "Cocos (Keeling) Islands"
+​
+26: "United States Virgin Islands"
+​
+27: "Norfolk Island"
+​
+28: "Nauru"
+​
+29: "Bouvet Island"
+​
+30: "Micronesia"
+​
+31: "American Samoa"
+​
+32: "Anguilla"
+​
+33: "Marshall Islands"
+​
+34: "Kiribati"
+​
+35: "Northern Mariana Islands"
+​
+36: "Guam"
+​
+37: "Gibraltar"
+​
+38: "Vatican City"
+​
+39: "Jersey"
+​
+40: "Tuvalu"
+​
+41: "Saint Helena, Ascension and Tristan da Cunha"
+​
+42: "Samoa"
+​
+43: "Guernsey"
+​
+44: "Tonga"
+​
+45: "Saint Kitts and Nevis"
+​
+46: "Falkland Islands"
+​
+47: "Palau"
+​
+48: "Turks and Caicos Islands"
+​
+49: "British Virgin Islands"
+​
+50: "Liechtenstein"
+​
+51: "Andorra"
+​
+52: "Tokelau"
+​
+53: "Sint Maarten"
+​
+54: "United States Minor Outlying Islands"
+​
+55: "Antigua and Barbuda"
+​
+56: "Saint Pierre and Miquelon"
+​
+57: "Saint Vincent and the Grenadines"
+​
+58: "South Georgia"
+​
+59: "Caribbean Netherlands"
+​
+60: "Monaco"
+​
+61: "Svalbard and Jan Mayen"
+​
+length: 62
+​
+//Print the following details name, capital, flag using forEach function
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all",true)
+request.send()
+ request.onload=function(){
+    var data = request.response
+    var result = JSON.parse(data)
+    var res = result.forEach((ele)=>{console.log(`${ele.name.common} ${ele.capital} ${ele.flag}`)})
+    }
+    output:
+
+
+Mauritania Nouakchott 🇲🇷 script.js:32:46
+Aruba Oranjestad 🇦🇼 script.js:32:46
+Argentina Buenos Aires 🇦🇷 script.js:32:46
+Sweden Stockholm 🇸🇪 script.js:32:46
+Maldives Malé 🇲🇻 script.js:32:46
+Mexico Mexico City 🇲🇽 script.js:32:46
+New Zealand Wellington 🇳🇿 script.js:32:46
+Ecuador Quito 🇪🇨 script.js:32:46
+Wallis and Futuna Mata-Utu 🇼🇫 script.js:32:46
+Åland Islands Mariehamn 🇦🇽 script.js:32:46
+Montenegro Podgorica 🇲🇪 script.js:32:46
+Pakistan Islamabad 🇵🇰 script.js:32:46
+Pitcairn Islands Adamstown 🇵🇳 script.js:32:46
+Zambia Lusaka 🇿🇲 script.js:32:46
+Seychelles Victoria 🇸🇨 script.js:32:46
+Malaysia Kuala Lumpur 🇲🇾 script.js:32:46
+Norway Oslo 🇳🇴 script.js:32:46
+Uzbekistan Tashkent 🇺🇿 script.js:32:46
+Vanuatu Port Vila 🇻🇺 script.js:32:46
+French Southern and Antarctic Lands Port-aux-Français 🇹🇫 script.js:32:46
+Christmas Island Flying Fish Cove 🇨🇽 script.js:32:46
+Singapore Singapore 🇸🇬 script.js:32:46
+Suriname Paramaribo 🇸🇷 script.js:32:46
+Western Sahara El Aaiún 🇪🇭 script.js:32:46
+Saint Martin Marigot 🇲🇫 script.js:32:46
+Costa Rica San José 🇨🇷 script.js:32:46
+Heard Island and McDonald Islands undefined 🇭🇲 script.js:32:46
+Ireland Dublin 🇮🇪 script.js:32:46
+Antarctica undefined 🇦🇶 script.js:32:46
+Australia Canberra 🇦🇺 script.js:32:46
+Libya Tripoli 🇱🇾 script.js:32:46
+Qatar Doha 🇶🇦 script.js:32:46
+Greenland Nuuk 🇬🇱 script.js:32:46
+Mauritius Port Louis 🇲🇺 script.js:32:46
+Kazakhstan Nur-Sultan 🇰🇿 script.js:32:46
+British Indian Ocean Territory Diego Garcia 🇮🇴 script.js:32:46
+Albania Tirana 🇦🇱 script.js:32:46
+Bahrain Manama 🇧🇭 script.js:32:46
+Papua New Guinea Port Moresby 🇵🇬 script.js:32:46
+Burundi Gitega 🇧🇮 script.js:32:46
+India New Delhi 🇮🇳 script.js:32:46
+Uruguay Montevideo 🇺🇾 script.js:32:46
+Saint Lucia Castries 🇱🇨 script.js:32:46
+Barbados Bridgetown 🇧🇧 script.js:32:46
+New Caledonia Nouméa 🇳🇨 script.js:32:46
+Latvia Riga 🇱🇻 script.js:32:46
+Estonia Tallinn 🇪🇪 script.js:32:46
+Niue Alofi 🇳🇺 script.js:32:46
+Saint Barthélemy Gustavia 🇧🇱 script.js:32:46
+Puerto Rico San Juan 🇵🇷 script.js:32:46
+Grenada St. George's 🇬🇩 script.js:32:46
+Macau undefined 🇲🇴 script.js:32:46
+Cyprus Nicosia 🇨🇾 script.js:32:46
+Isle of Man Douglas 🇮🇲 script.js:32:46
+Greece Athens 🇬🇷 script.js:32:46
+Syria Damascus 🇸🇾 script.js:32:46
+Lithuania Vilnius 🇱🇹 script.js:32:46
+Curaçao Willemstad 🇨🇼 script.js:32:46
+Dominica Roseau 🇩🇲 script.js:32:46
+Niger Niamey 🇳🇪 script.js:32:46
+Kyrgyzstan Bishkek 🇰🇬 script.js:32:46
+Trinidad and Tobago Port of Spain 🇹🇹 script.js:32:46
+Togo Lomé 🇹🇬 script.js:32:46
+Palestine Ramallah,Jerusalem 🇵🇸 script.js:32:46
+Madagascar Antananarivo 🇲🇬 script.js:32:46
+Croatia Zagreb 🇭🇷 script.js:32:46
+Faroe Islands Tórshavn 🇫🇴 script.js:32:46
+Haiti Port-au-Prince 🇭🇹 script.js:32:46
+Montserrat Plymouth 🇲🇸 script.js:32:46
+Cook Islands Avarua 🇨🇰 script.js:32:46
+Timor-Leste Dili 🇹🇱 script.js:32:46
+Martinique Fort-de-France 🇲🇶 script.js:32:46
+Cuba Havana 🇨🇺 script.js:32:46
+Taiwan Taipei 🇹🇼 script.js:32:46
+Eswatini Mbabane 🇸🇿 script.js:32:46
+Ukraine Kyiv 🇺🇦 script.js:32:46
+Bermuda Hamilton 🇧🇲 script.js:32:46
+South Korea Seoul 🇰🇷 script.js:32:46
+Peru Lima 🇵🇪 script.js:32:46
+Iraq Baghdad 🇮🇶 script.js:32:46
+Moldova Chișinău 🇲🇩 script.js:32:46
+San Marino City of San Marino 🇸🇲 script.js:32:46
+Venezuela Caracas 🇻🇪 script.js:32:46
+Guyana Georgetown 🇬🇾 script.js:32:46
+Cayman Islands George Town 🇰🇾 script.js:32:46
+Cambodia Phnom Penh 🇰🇭 script.js:32:46
+Cocos (Keeling) Islands West Island 🇨🇨 script.js:32:46
+Malta Valletta 🇲🇹 script.js:32:46
+Sri Lanka Sri Jayawardenepura Kotte 🇱🇰 script.js:32:46
+Israel Jerusalem 🇮🇱 script.js:32:46
+Sudan Khartoum 🇸🇩 script.js:32:46
+United States Virgin Islands Charlotte Amalie 🇻🇮 script.js:32:46
+Eritrea Asmara 🇪🇷 script.js:32:46
+Mali Bamako 🇲🇱 script.js:32:46
+Somalia Mogadishu 🇸🇴 script.js:32:46
+Norfolk Island Kingston 🇳🇫 script.js:32:46
+Comoros Moroni 🇰🇲 script.js:32:46
+Nicaragua Managua 🇳🇮 script.js:32:46
+Russia Moscow 🇷🇺 script.js:32:46
+Uganda Kampala 🇺🇬 script.js:32:46
+Nauru Yaren 🇳🇷 script.js:32:46
+Switzerland Bern 🇨🇭 script.js:32:46
+Portugal Lisbon 🇵🇹 script.js:32:46
+Tajikistan Dushanbe 🇹🇯 script.js:32:46
+South Sudan Juba 🇸🇸 script.js:32:46
+Bouvet Island undefined 🇧🇻 script.js:32:46
+Micronesia Palikir 🇫🇲 script.js:32:46
+American Samoa Pago Pago 🇦🇸 script.js:32:46
+Czechia Prague 🇨🇿 script.js:32:46
+Botswana Gaborone 🇧🇼 script.js:32:46
+Tunisia Tunis 🇹🇳 script.js:32:46
+Anguilla The Valley 🇦🇮 script.js:32:46
+Guinea-Bissau Bissau 🇬🇼 script.js:32:46
+Slovakia Bratislava 🇸🇰 script.js:32:46
+Marshall Islands Majuro 🇲🇭 script.js:32:46
+Algeria Algiers 🇩🇿 script.js:32:46
+Jamaica Kingston 🇯🇲 script.js:32:46
+Mozambique Maputo 🇲🇿 script.js:32:46
+Spain Madrid 🇪🇸 script.js:32:46
+Honduras Tegucigalpa 🇭🇳 script.js:32:46
+Netherlands Amsterdam 🇳🇱 script.js:32:46
+South Africa Pretoria,Bloemfontein,Cape Town 🇿🇦 script.js:32:46
+Azerbaijan Baku 🇦🇿 script.js:32:46
+North Macedonia Skopje 🇲🇰 script.js:32:46
+Gambia Banjul 🇬🇲 script.js:32:46
+Liberia Monrovia 🇱🇷 script.js:32:46
+Luxembourg Luxembourg 🇱🇺 script.js:32:46
+Cape Verde Praia 🇨🇻 script.js:32:46
+Bahamas Nassau 🇧🇸 script.js:32:46
+Georgia Tbilisi 🇬🇪 script.js:32:46
+Kiribati South Tarawa 🇰🇮 script.js:32:46
+Tanzania Dodoma 🇹🇿 script.js:32:46
+China Beijing 🇨🇳 script.js:32:46
+Guatemala Guatemala City 🇬🇹 script.js:32:46
+São Tomé and Príncipe São Tomé 🇸🇹 script.js:32:46
+Germany Berlin 🇩🇪 script.js:32:46
+Sierra Leone Freetown 🇸🇱 script.js:32:46
+Chad N'Djamena 🇹🇩 script.js:32:46
+United Kingdom London 🇬🇧 script.js:32:46
+Slovenia Ljubljana 🇸🇮 script.js:32:46
+Thailand Bangkok 🇹🇭 script.js:32:46
+Indonesia Jakarta 🇮🇩 script.js:32:46
+Northern Mariana Islands Saipan 🇲🇵 script.js:32:46
+Guam Hagåtña 🇬🇺 script.js:32:46
+Finland Helsinki 🇫🇮 script.js:32:46
+Mayotte Mamoudzou 🇾🇹 script.js:32:46
+Gibraltar Gibraltar 🇬🇮 script.js:32:46
+Turkmenistan Ashgabat 🇹🇲 script.js:32:46
+Kosovo Pristina 🇽🇰 script.js:32:46
+Ivory Coast Yamoussoukro 🇨🇮 script.js:32:46
+Morocco Rabat 🇲🇦 script.js:32:46
+Dominican Republic Santo Domingo 🇩🇴 script.js:32:46
+Ghana Accra 🇬🇭 script.js:32:46
+Vatican City Vatican City 🇻🇦 script.js:32:46
+Jersey Saint Helier 🇯🇪 script.js:32:46
+Turkey Ankara 🇹🇷 script.js:32:46
+Tuvalu Funafuti 🇹🇻 script.js:32:46
+Iran Tehran 🇮🇷 script.js:32:46
+Egypt Cairo 🇪🇬 script.js:32:46
+Denmark Copenhagen 🇩🇰 script.js:32:46
+Kenya Nairobi 🇰🇪 script.js:32:46
+Bulgaria Sofia 🇧🇬 script.js:32:46
+Zimbabwe Harare 🇿🇼 script.js:32:46
+Angola Luanda 🇦🇴 script.js:32:46
+Nigeria Abuja 🇳🇬 script.js:32:46
+Poland Warsaw 🇵🇱 script.js:32:46
+Senegal Dakar 🇸🇳 script.js:32:46
+Saint Helena, Ascension and Tristan da Cunha Jamestown 🇸🇭 script.js:32:46
+Lebanon Beirut 🇱🇧 script.js:32:46
+Samoa Apia 🇼🇸 script.js:32:46
+Philippines Manila 🇵🇭 script.js:32:46
+Guernsey St. Peter Port 🇬🇬 script.js:32:46
+El Salvador San Salvador 🇸🇻 script.js:32:46
+Kuwait Kuwait City 🇰🇼 script.js:32:46
+Tonga Nuku'alofa 🇹🇴 script.js:32:46
+Oman Muscat 🇴🇲 script.js:32:46
+Afghanistan Kabul 🇦🇫 script.js:32:46
+Saint Kitts and Nevis Basseterre 🇰🇳 script.js:32:46
+Central African Republic Bangui 🇨🇫 script.js:32:46
+Serbia Belgrade 🇷🇸 script.js:32:46
+Armenia Yerevan 🇦🇲 script.js:32:46
+Bangladesh Dhaka 🇧🇩 script.js:32:46
+Laos Vientiane 🇱🇦 script.js:32:46
+Chile Santiago 🇨🇱 script.js:32:46
+French Polynesia Papeetē 🇵🇫 script.js:32:46
+Panama Panama City 🇵🇦 script.js:32:46
+United States Washington, D.C. 🇺🇸 script.js:32:46
+Nepal Kathmandu 🇳🇵 script.js:32:46
+Myanmar Naypyidaw 🇲🇲 script.js:32:46
+Falkland Islands Stanley 🇫🇰 script.js:32:46
+Hungary Budapest 🇭🇺 script.js:32:46
+Palau Ngerulmud 🇵🇼 script.js:32:46
+Equatorial Guinea Malabo 🇬🇶 script.js:32:46
+Guinea Conakry 🇬🇳 script.js:32:46
+United Arab Emirates Abu Dhabi 🇦🇪 script.js:32:46
+Turks and Caicos Islands Cockburn Town 🇹🇨 script.js:32:46
+British Virgin Islands Road Town 🇻🇬 script.js:32:46
+Liechtenstein Vaduz 🇱🇮 script.js:32:46
+Bosnia and Herzegovina Sarajevo 🇧🇦 script.js:32:46
+Malawi Lilongwe 🇲🇼 script.js:32:46
+Bhutan Thimphu 🇧🇹 script.js:32:46
+Cameroon Yaoundé 🇨🇲 script.js:32:46
+Andorra Andorra la Vella 🇦🇩 script.js:32:46
+Guadeloupe Basse-Terre 🇬🇵 script.js:32:46
+Republic of the Congo Brazzaville 🇨🇬 script.js:32:46
+Réunion Saint-Denis 🇷🇪 script.js:32:46
+Burkina Faso Ouagadougou 🇧🇫 script.js:32:46
+Jordan Amman 🇯🇴 script.js:32:46
+DR Congo Kinshasa 🇨🇩 script.js:32:46
+Tokelau Fakaofo 🇹🇰 script.js:32:46
+Vietnam Hanoi 🇻🇳 script.js:32:46
+Sint Maarten Philipsburg 🇸🇽 script.js:32:46
+Belgium Brussels 🇧🇪 script.js:32:46
+United States Minor Outlying Islands Washington DC 🇺🇲 script.js:32:46
+Brazil Brasília 🇧🇷 script.js:32:46
+Belize Belmopan 🇧🇿 script.js:32:46
+Antigua and Barbuda Saint John's 🇦🇬 script.js:32:46
+Paraguay Asunción 🇵🇾 script.js:32:46
+Benin Porto-Novo 🇧🇯 script.js:32:46
+Brunei Bandar Seri Begawan 🇧🇳 script.js:32:46
+Bolivia Sucre 🇧🇴 script.js:32:46
+Djibouti Djibouti 🇩🇯 script.js:32:46
+French Guiana Cayenne 🇬🇫 script.js:32:46
+Canada Ottawa 🇨🇦 script.js:32:46
+Saint Pierre and Miquelon Saint-Pierre 🇵🇲 script.js:32:46
+Japan Tokyo 🇯🇵 script.js:32:46
+Rwanda Kigali 🇷🇼 script.js:32:46
+Saint Vincent and the Grenadines Kingstown 🇻🇨 script.js:32:46
+Iceland Reykjavik 🇮🇸 script.js:32:46
+Belarus Minsk 🇧🇾 script.js:32:46
+Hong Kong City of Victoria 🇭🇰 script.js:32:46
+Lesotho Maseru 🇱🇸 script.js:32:46
+Fiji Suva 🇫🇯 script.js:32:46
+Austria Vienna 🇦🇹 script.js:32:46
+Colombia Bogotá 🇨🇴 script.js:32:46
+Gabon Libreville 🇬🇦 script.js:32:46
+Saudi Arabia Riyadh 🇸🇦 script.js:32:46
+South Georgia King Edward Point 🇬🇸 script.js:32:46
+Ethiopia Addis Ababa 🇪🇹 script.js:32:46
+Caribbean Netherlands Kralendijk 🇧🇶 script.js:32:46
+Monaco Monaco 🇲🇨 script.js:32:46
+North Korea Pyongyang 🇰🇵 script.js:32:46
+Italy Rome 🇮🇹 script.js:32:46
+Namibia Windhoek 🇳🇦 script.js:32:46
+Mongolia Ulan Bator 🇲🇳 script.js:32:46
+Solomon Islands Honiara 🇸🇧 script.js:32:46
+Yemen Sana'a 🇾🇪 script.js:32:46
+Romania Bucharest 🇷🇴 script.js:32:46
+Svalbard and Jan Mayen Longyearbyen 🇸🇯 script.js:32:46
+France Paris 🇫🇷 script.js:32:46
+
+//Print the total population of countries using reduce function
+
+var request= new XMLHttpRequest();
+request.open ( "GET","https://restcountries.com/v3.1/all",true);
+request.send();
+request.onload =function(){
+    var data=request.response;
+    var result = JSON.parse(data);
+    var res= result.reduce((acc,ele)=>acc+ele.population,0)
+    console.log(res);
+}
+output:
+7777721563
+
+//Print the country which uses US Dollars as currency.
+let request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v3.1/all",true)
+request.send();
+request.onload = function()  {
+    let data = JSON.parse(request.response)
+    let result = data.filter((ele) => (ele.currencies !== undefined))
+    let res1 = result.filter((data) =>  {
+    for (let key in data.currencies) {
+        if(data.currencies[key].name === "United States dollar"){
+      return data
+      }
+    }
+    })
+    
+    console.log(res1.length, res1[0].currencies)
+    console.log(res1.map((ele)=>ele.name.common))
+}
+output:
+
+
+20 
+Object { USD: {…} }
+
+Array(20) [ "Ecuador", "British Indian Ocean Territory", "Puerto Rico", "Timor-Leste", "Cambodia", "United States Virgin Islands", "Micronesia", "American Samoa", "Marshall Islands", "Bahamas", … ]
+
+
+0: "Ecuador"
+​
+1: "British Indian Ocean Territory"
+​
+2: "Puerto Rico"
+​
+3: "Timor-Leste"
+​
+4: "Cambodia"
+​
+5: "United States Virgin Islands"
+​
+6: "Micronesia"
+​
+7: "American Samoa"
+​
+8: "Marshall Islands"
+​
+9: "Bahamas"
+​
+10: "Northern Mariana Islands"
+​
+11: "Guam"
+​
+12: "El Salvador"
+​
+13: "Panama"
+​
+14: "United States"
+​
+15: "Palau"
+​
+16: "Turks and Caicos Islands"
+​
+17: "British Virgin Islands"
+​
+18: "United States Minor Outlying Islands"
+​
+19: "Caribbean Netherlands"
+​
+length: 20
